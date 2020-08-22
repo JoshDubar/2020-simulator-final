@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1178559685}
   - component: {fileID: 1178559687}
   - component: {fileID: 6679353149259084166}
-  - component: {fileID: 5911648050897671048}
+  - component: {fileID: -1015506501844557797}
+  - component: {fileID: 3120736015043223218}
   m_Layer: 0
   m_Name: Rando
   m_TagString: Rando
@@ -123,6 +124,9 @@ MonoBehaviour:
   skin: 0
   mask: 0
   radius: 0
+  friend: 0
+  canFriend: 0
+  friendRatio: 0
 --- !u!114 &6679353149259084166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +142,7 @@ MonoBehaviour:
   cough: {fileID: 1910728654845194571, guid: 7c9b5bca31fd84959baf840dd74b2bb9, type: 3}
   isRunning: 1
   numberOfSeconds: 0
---- !u!114 &5911648050897671048
+--- !u!114 &-1015506501844557797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,3 +156,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
   offset: 3
+--- !u!114 &3120736015043223218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537682492185308483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a3ae39d2a4a4f5aa2a944d2bf6b845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cough: {fileID: 1910728654845194571, guid: 7c9b5bca31fd84959baf840dd74b2bb9, type: 3}
+  isRunning: 1
+  numberOfSeconds: 0

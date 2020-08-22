@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1236470006}
   - component: {fileID: 1236470009}
   - component: {fileID: 5103043560858910696}
-  - component: {fileID: 3585352914792753218}
-  - component: {fileID: 159983886519443880}
+  - component: {fileID: 2595223510875734203}
+  - component: {fileID: 7423504663216431405}
   m_Layer: 0
   m_Name: Karen
   m_TagString: Karen
@@ -31,11 +31,7 @@ Transform:
   m_GameObject: {fileID: 4839997766954531606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1766105, y: 0.46203524, z: -0.8538133}
-<<<<<<< HEAD
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0.038046334}
-=======
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0}
->>>>>>> 3aff802611063af85cba43d833772f7fb989f879
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -142,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
   offset: 4
---- !u!114 &3585352914792753218
+--- !u!114 &2595223510875734203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,11 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da3b3e66166d14aaf8929d7850ffdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 0.2
   decisionTime: {x: 1, y: 4}
   right: 1
-  radius: 60
---- !u!114 &159983886519443880
+  radius: 0
+  following: 0
+--- !u!114 &7423504663216431405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,11 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3ae39d2a4a4f5aa2a944d2bf6b845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   cough: {fileID: 1910728654845194571, guid: 7c9b5bca31fd84959baf840dd74b2bb9, type: 3}
   isRunning: 1
   numberOfSeconds: 0
-=======
-  radius: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
-  offset: 0
->>>>>>> 3aff802611063af85cba43d833772f7fb989f879
