@@ -12,14 +12,13 @@ public class CoughDirection : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         float x_offset = this.transform.parent.localScale.x;
         float y_offset = this.transform.parent.localScale.y;
         
         // Coughing for Rando
         if (this.transform.parent.tag == "Rando") {
-            if (this.GetComponentInParent<Wander>().right == false ) {
+            if (this.GetComponentInParent<RandoController>().right == false ) {
                 sprite.flipX = true;
                 this.transform.position = new Vector2(this.transform.parent.position.x - 2, this.transform.parent.position.y + 2);
             }
@@ -30,7 +29,7 @@ public class CoughDirection : MonoBehaviour
         }
         // Coughing for Karen
         else if (this.transform.parent.tag == "Karen") {
-            if (this.GetComponentInParent<KarenWander>().right == false) {
+            if (this.GetComponentInParent<KarenController>().right == false) {
                 sprite.flipX = true;
                 this.transform.position = new Vector2(this.transform.parent.position.x - x_offset*2, this.transform.parent.position.y + y_offset*10);
             }

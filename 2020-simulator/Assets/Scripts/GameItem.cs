@@ -9,6 +9,4 @@ public class GameItem : ScriptableObject
     public Sprite image;
     public int amount;
 
-    
-
 }

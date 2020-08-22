@@ -10,8 +10,7 @@ public class CoughScript : MonoBehaviour
     private SpriteRenderer sprite;
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         int randomNum = Random.Range(1, 12);
         if (isRunning == 1 && randomNum%3 == 0) 
         {
@@ -24,8 +23,10 @@ public class CoughScript : MonoBehaviour
     {
         isRunning = 0;
         yield return new WaitForSeconds(numberOfSeconds);
-        if (this.gameObject.GetComponent<Wander>().mask < 4)
-        {
+        if (this.gameObject.tag == "Karen") {
+            renderCough();
+        }
+        else if (this.gameObject.tag == "Rando" && this.gameObject.GetComponent<RandoController>().mask < 4) {
             renderCough();
         }
         isRunning = 1;

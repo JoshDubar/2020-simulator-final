@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class FillStatusBar : MonoBehaviour
 {
-    public Wander friendShip;
 
     public Image fillImage;
 
@@ -25,7 +24,7 @@ public class FillStatusBar : MonoBehaviour
         if (slider.value > slider.minValue && !(fillImage)) {
             fillImage.enabled = true;
         }
-        float fillValue = friendShip.friendRatio / 100.0f;
+        float fillValue = 0;
         Debug.Log(fillValue);
         slider.value = fillValue;
     }
