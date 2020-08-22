@@ -12,18 +12,21 @@ public class PlayerController : MonoBehaviour
     public int socialSkills;
     public int maskDurability;
     public int radius;
+    public int friends;
     public bool mask = true;
     Animator anim;
+    PlayerUI playerUI;
 
     void Start() {
         energy = 0;
         socialSkills = 0;
         maskDurability = 100;
-        radius = 20;
+        radius = 10;
+        friends = 0;
         anim = GetComponent<Animator>();
         anim.SetBool("Mask",mask);
 
-        
+        playerUI = GetComponent<PlayerUI>();
     }
 
     void Update() {
@@ -59,6 +62,16 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Moving",moving);
         Transform range = this.transform.GetChild(0);
         range.localScale = new Vector2(radius, radius / 4);
+
+        setStats();
+    }
+
+    // Update is called once per frame
+    void setStats()
+    {
+        playerUI.maskHealth.text = maskDurability.ToString() + "%";
+        playerUI.radius.text = (radius*0.15).ToString() + "m";
+        playerUI.numFriends.text = friends.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
