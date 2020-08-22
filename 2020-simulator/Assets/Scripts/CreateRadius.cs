@@ -5,8 +5,12 @@ using UnityEngine;
 public class CreateRadius : MonoBehaviour
 {
     // Start is called before the first frame update
+<<<<<<< HEAD
     public GameObject circle;
 
+=======
+    public GameObject radius;
+>>>>>>> 3aff802611063af85cba43d833772f7fb989f879
     public int offset;
     void Start()
     {

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ToiletPaper
   m_EditorClassIdentifier: 
   name: ToiletPaper
-  image: {fileID: 21300000, guid: 515459355dabe4b26b299d2aaad75a8c, type: 3}
+  image: {fileID: 21300000, guid: c54721f70d34d4bf290d4a38251a04bd, type: 3}
   amount: 10

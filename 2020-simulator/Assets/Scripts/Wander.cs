@@ -35,12 +35,18 @@ public class Wander : MonoBehaviour
     public float friendRatio;
  
     // Use this for initialization
+<<<<<<< HEAD
     void Start()
     {   
         radius = 10;
         friend = false;
         canFriend = true;
         friendRatio = 0;
+=======
+    void Awake()
+    {
+        
+>>>>>>> 3aff802611063af85cba43d833772f7fb989f879
         anim = GetComponent<Animator>();
         skin = Random.Range(0,4);
         mask = Random.Range(0,10);
@@ -53,7 +59,7 @@ public class Wander : MonoBehaviour
  
         // Set a random time delay for taking a decision ( changing direction, or standing in place for a while )
         decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
- 
+    
         // Choose a movement direction, or stay in place
         ChooseMoveDirection();
     }
@@ -61,9 +67,13 @@ public class Wander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         if (friendRatio >= 100) {
             friend = true;
         }
+=======
+        
+>>>>>>> 3aff802611063af85cba43d833772f7fb989f879
         if (currentMoveDirection==0||currentMoveDirection==4||currentMoveDirection==5) {
             right = true;
         } else {
@@ -82,8 +92,12 @@ public class Wander : MonoBehaviour
             ChooseMoveDirection();
         }
         anim.SetBool("Right", right);
+<<<<<<< HEAD
         Transform range = this.transform.GetChild(0);
         range.localScale = new Vector2(radius, radius / 4);
+=======
+        Debug.Log(right);
+>>>>>>> 3aff802611063af85cba43d833772f7fb989f879
     }
  
     void ChooseMoveDirection()

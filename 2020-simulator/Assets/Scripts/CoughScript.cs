@@ -24,7 +24,10 @@ public class CoughScript : MonoBehaviour
     {
         isRunning = 0;
         yield return new WaitForSeconds(numberOfSeconds);
-        renderCough();
+        if (this.gameObject.GetComponent<Wander>().mask < 4)
+        {
+            renderCough();
+        }
         isRunning = 1;
     }
 
