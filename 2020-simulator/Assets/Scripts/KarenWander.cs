@@ -25,8 +25,7 @@ public class KarenWander : MonoBehaviour
     public bool right = true;
 
     public int radius;
-
-    //private Transform target;
+    private Transform target;
 
     private bool following;
  
@@ -36,7 +35,7 @@ public class KarenWander : MonoBehaviour
         radius = 60;
         anim = GetComponent<Animator>();  
 
-        //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();      
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();      
 
         // Cache the transform for quicker access
         thisTransform = this.transform;
