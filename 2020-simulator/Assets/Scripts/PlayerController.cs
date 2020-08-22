@@ -14,7 +14,6 @@ public class PlayerController : Character
     public float maskDurability;
     public int friends;
     public bool mask = true;
-    public int numFriends;
     Animator anim;
     PlayerUI playerUI;
 

@@ -26,15 +26,9 @@ public class RandoController : Character {
         mask = Random.Range(0,10);
         anim.SetInteger("Skin",skin);
         anim.SetInteger("Mask",mask);
-        // Cache the transform for quicker access
-        thisTransform = this.transform;
-        thisTransform.position = new Vector3(thisTransform.position.x, thisTransform.position.y, thisTransform.position.y);
     }
  
     void Update() {
-        if (friendRatio >= 100) {
-            friend = true;
-        }
         right = this.transform.GetComponent<Wander>().right;
         base.radiusChange();
     }

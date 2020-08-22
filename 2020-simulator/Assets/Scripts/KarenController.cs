@@ -23,8 +23,8 @@ public class KarenController : Character
         thisTransform.position = new Vector3(thisTransform.position.x, thisTransform.position.y, thisTransform.position.y);
     }
  
-    // Update is called once per frame
     void Update() {
+        // Following the player
         if (following) {
             moveSpeed = 5.0f;
             thisTransform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
@@ -32,6 +32,7 @@ public class KarenController : Character
             this.transform.GetComponent<Wander>().enabled = false;
             
         }
+        // Normal wander script
         else {
             this.transform.GetComponent<Wander>();
             right = this.transform.GetComponent<Wander>().right;
@@ -40,6 +41,7 @@ public class KarenController : Character
     }
  
     void turnDirection() {
+        // Face the side of going towards the player
         if (transform.position.x < target.position.x) {
             right = true;
         }
