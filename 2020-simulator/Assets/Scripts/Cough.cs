@@ -18,7 +18,7 @@ public class Cough : MonoBehaviour
         {
             StartCoroutine(Wait());
         }
-        numberOfSeconds = this.gameObject.GetComponent<NPC>().coughRate;
+        numberOfSeconds = Random.Range(5, 15);
     }
 
     public IEnumerator Wait()
@@ -32,17 +32,21 @@ public class Cough : MonoBehaviour
     private void renderCough()
     {
         GameObject a = Instantiate(cough) as GameObject;
-        a.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+        //a.transform.localScale = new Vector3(0.5f, 0.5f, 0);
         sprite = a.GetComponent<SpriteRenderer>();
         a.transform.parent = this.transform;
+        float x_offset = this.transform.localScale.x;
+        float y_offset = this.transform.localScale.y;
         if (this.gameObject.GetComponent<Wander>().right == false)
         {
+            Debug.Log("Right");
             sprite.flipX = true;
-            a.transform.position = new Vector2(this.transform.position.x - 0.5f, this.transform.position.y + 0.2f);
+            a.transform.position = new Vector2(this.transform.position.x - x_offset, this.transform.position.y + y_offset);
         }
         else
         {
-            a.transform.position = new Vector2(this.transform.position.x + 0.5f, this.transform.position.y + 0.2f);
+            Debug.Log("Left");
+            a.transform.position = new Vector2(this.transform.position.x + x_offset, this.transform.position.y + y_offset);
         }
     }
 }

@@ -19,11 +19,9 @@ public class PlayerController : MonoBehaviour
         energy = 0;
         socialSkills = 0;
         maskDurability = 100;
-        radius = 20;
+        radius = 10;
         anim = GetComponent<Animator>();
         anim.SetBool("Mask",mask);
-        Transform range = this.transform.GetChild(0);
-        range.localScale = new Vector2(radius, radius / 4);
     }
 
     void Update() {
@@ -57,6 +55,10 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(pos.x, pos.y, pos.y);
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
+
+        // Change radius
+        Transform range = this.transform.GetChild(0);
+        range.localScale = new Vector2(radius, radius / 4);
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {

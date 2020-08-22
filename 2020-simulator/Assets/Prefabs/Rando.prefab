@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1178559685}
   - component: {fileID: 1178559687}
   - component: {fileID: 6679353149259084166}
-  - component: {fileID: 314035297481183776}
+  - component: {fileID: 5911648050897671048}
   m_Layer: 0
   m_Name: Rando
   m_TagString: Untagged
@@ -122,6 +122,7 @@ MonoBehaviour:
   right: 1
   skin: 0
   mask: 0
+  radius: 0
 --- !u!114 &6679353149259084166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ MonoBehaviour:
   cough: {fileID: 1910728654845194571, guid: 7c9b5bca31fd84959baf840dd74b2bb9, type: 3}
   isRunning: 1
   numberOfSeconds: 0
---- !u!114 &314035297481183776
+--- !u!114 &5911648050897671048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,8 +147,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4537682492185308483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e238f709320245f8a5e6f93398c3aa8, type: 3}
+  m_Script: {fileID: 11500000, guid: da72beaeadeab21489213291e0d9dd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mask: 0
-  coughRate: 5
+  circle: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
+  offset: 3

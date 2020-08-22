@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// This makes an object move randomly in a set of directions, with some random time delay in between each decision
 /// </summary>
-public class Wander : MonoBehaviour
+public class KarenWander : MonoBehaviour
 {
     internal Transform thisTransform;
 
@@ -23,20 +23,20 @@ public class Wander : MonoBehaviour
                                                         Vector3.down+Vector3.right, Vector3.up+Vector3.left, Vector3.down+Vector3.left};
     internal int currentMoveDirection;
     public bool right = true;
-    public int skin = 0;
-    public int mask = 0;
 
     public int radius;
+
+    //private Transform target;
+
+    private bool following;
  
     // Use this for initialization
     void Start()
-    {   
-        radius = 10;
-        anim = GetComponent<Animator>();
-        skin = Random.Range(0,4);
-        mask = Random.Range(0,10);
-        anim.SetInteger("Skin",skin);
-        anim.SetInteger("Mask",mask);
+    {
+        radius = 60;
+        anim = GetComponent<Animator>();  
+
+        //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();      
 
         // Cache the transform for quicker access
         thisTransform = this.transform;
@@ -70,6 +70,7 @@ public class Wander : MonoBehaviour
             ChooseMoveDirection();
         }
         anim.SetBool("Right", right);
+        
         Transform range = this.transform.GetChild(0);
         range.localScale = new Vector2(radius, radius / 4);
     }
