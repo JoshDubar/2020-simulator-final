@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Karen
   - Rando
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -195,6 +195,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1472090100049295844, guid: ea258d4e11e80490bb32bca0d2569c95,
+        type: 3}
+      propertyPath: circle
+      value: 
+      objectReference: {fileID: 6709542483749682294, guid: ab7fd98910ab7a44bb34d407a87d97bd,
+        type: 3}
     - target: {fileID: 190388583, guid: ea258d4e11e80490bb32bca0d2569c95, type: 3}
       propertyPath: radius
       value: 20

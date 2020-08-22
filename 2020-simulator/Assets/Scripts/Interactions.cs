@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Interactions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameObject parent;
+    private void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.transform.parent == null) {
+            ;
+        }
+        else if (collider.transform.parent.tag == "Karen") {
+            Debug.Log("Karen is now going to chase you");
+        }
+        else if (collider.transform.parent.tag == "Rando") {
+            Debug.Log("Hopefully he/she is not coughing on you");
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }
