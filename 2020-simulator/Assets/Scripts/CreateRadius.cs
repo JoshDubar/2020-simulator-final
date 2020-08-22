@@ -6,11 +6,12 @@ public class CreateRadius : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject radius;
+    public int offset;
     void Start()
     {
         GameObject range = Instantiate(radius) as GameObject;
         range.transform.parent = this.transform;
-        range.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 1);
+        range.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - offset);
     }
 
     // Update is called once per frame

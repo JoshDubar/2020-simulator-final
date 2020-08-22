@@ -25,7 +25,10 @@ public class Cough : MonoBehaviour
     {
         isRunning = 0;
         yield return new WaitForSeconds(numberOfSeconds);
-        renderCough();
+        if (this.gameObject.GetComponent<Wander>().mask < 4)
+        {
+            renderCough();
+        }
         isRunning = 1;
     }
 
@@ -38,11 +41,11 @@ public class Cough : MonoBehaviour
         if (this.gameObject.GetComponent<Wander>().right == false)
         {
             sprite.flipX = true;
-            a.transform.position = new Vector2(this.transform.position.x - 0.5f, this.transform.position.y + 0.2f);
-        }
+            a.transform.position = new Vector2(this.transform.position.x - 0.5f, this.transform.position.y + 0.12f);
+        }       
         else
         {
-            a.transform.position = new Vector2(this.transform.position.x + 0.5f, this.transform.position.y + 0.2f);
+            a.transform.position = new Vector2(this.transform.position.x + 0.5f, this.transform.position.y + 0.12f);
         }
     }
 }

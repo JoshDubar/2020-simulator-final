@@ -27,8 +27,9 @@ public class Wander : MonoBehaviour
     public int mask = 0;
  
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        
         anim = GetComponent<Animator>();
         skin = Random.Range(0,4);
         mask = Random.Range(0,10);
@@ -41,7 +42,7 @@ public class Wander : MonoBehaviour
  
         // Set a random time delay for taking a decision ( changing direction, or standing in place for a while )
         decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
- 
+    
         // Choose a movement direction, or stay in place
         ChooseMoveDirection();
     }
@@ -49,6 +50,7 @@ public class Wander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (currentMoveDirection==0||currentMoveDirection==4||currentMoveDirection==5) {
             right = true;
         } else {
@@ -67,6 +69,7 @@ public class Wander : MonoBehaviour
             ChooseMoveDirection();
         }
         anim.SetBool("Right", right);
+        Debug.Log(right);
     }
  
     void ChooseMoveDirection()

@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2751353005725838621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: -100}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   energy: 0
   socialSkills: 0
   maskDurability: 0
-  radius: 0
+  radius: 10
   mask: 1
 --- !u!50 &129774819
 Rigidbody2D:
@@ -202,3 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
+  offset: 3
