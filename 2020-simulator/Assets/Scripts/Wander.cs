@@ -27,11 +27,20 @@ public class Wander : MonoBehaviour
     public int mask = 0;
 
     public int radius;
+
+    public bool friend;
+
+    public bool canFriend;
+
+    public float friendRatio;
  
     // Use this for initialization
     void Start()
     {   
         radius = 10;
+        friend = false;
+        canFriend = true;
+        friendRatio = 0;
         anim = GetComponent<Animator>();
         skin = Random.Range(0,4);
         mask = Random.Range(0,10);
@@ -52,6 +61,9 @@ public class Wander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (friendRatio >= 100) {
+            friend = true;
+        }
         if (currentMoveDirection==0||currentMoveDirection==4||currentMoveDirection==5) {
             right = true;
         } else {

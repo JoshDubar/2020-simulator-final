@@ -10,16 +10,22 @@ public class PlayerController : MonoBehaviour
     public bool right = DEFAULT_DIRECTION;
     public int energy;
     public int socialSkills;
-    public int maskDurability;
+    public float maskDurability;
+
+    public float currentMaskDurability;
     public int radius;
     public bool mask = true;
+
+    public int numFriends;
     Animator anim;
 
     void Start() {
         energy = 0;
         socialSkills = 0;
         maskDurability = 100;
+        currentMaskDurability = maskDurability;
         radius = 10;
+        numFriends = 0;
         anim = GetComponent<Animator>();
         anim.SetBool("Mask",mask);
     }
@@ -56,12 +62,19 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
 
+        // mask set to false
+
+        if (currentMaskDurability <= 0) {
+            mask = false;
+        }
+
         // Change radius
         Transform range = this.transform.GetChild(0);
         range.localScale = new Vector2(radius, radius / 4);
     }
 
+/*
     private void OnTriggerEnter2D(Collider2D collider) {
         Debug.Log("Test");
-    }
+    }*/
 }

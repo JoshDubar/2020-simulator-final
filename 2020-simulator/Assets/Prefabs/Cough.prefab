@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1910728654845194565}
   - component: {fileID: 1910728654845194564}
   - component: {fileID: 7486384443989077774}
+  - component: {fileID: 8719873063702290840}
   m_Layer: 0
   m_Name: Cough
   m_TagString: Untagged
@@ -112,5 +113,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 727a6a5859a654a369b2c20707d601a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8719873063702290840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910728654845194571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e75c14676440a3458f8704555397e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

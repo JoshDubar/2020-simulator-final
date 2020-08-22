@@ -27,7 +27,8 @@ public class KarenWander : MonoBehaviour
     public int radius;
     private Transform target;
 
-    private bool following;
+    public bool following;
+
  
     // Use this for initialization
     void Start()
@@ -46,30 +47,41 @@ public class KarenWander : MonoBehaviour
  
         // Choose a movement direction, or stay in place
         ChooseMoveDirection();
+
     }
  
     // Update is called once per frame
     void Update()
     {
-        if (currentMoveDirection==0||currentMoveDirection==4||currentMoveDirection==5) {
-            right = true;
-        } else {
-            right = false;
+        if (following) {
+            moveSpeed = 5.0f;
+            thisTransform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
+            turnDirection();
+            
         }
-        // Move the object in the chosen direction at the set speed
-        thisTransform.position += moveDirections[currentMoveDirection] * Time.deltaTime * moveSpeed;
-        thisTransform.position = new Vector3(thisTransform.position.x, thisTransform.position.y, thisTransform.position.y);
- 
-        if (decisionTimeCount > 0) decisionTimeCount -= Time.deltaTime;
-        else
-        {
-            // Choose a random time delay for taking a decision ( changing direction, or standing in place for a while )
-            decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
-            // Choose a movement direction, or stay in place
-            ChooseMoveDirection();
+        else {
+
+            if (currentMoveDirection==0||currentMoveDirection==4||currentMoveDirection==5) {
+                right = true;
+            } else {
+                right = false;
+            }
+            // Move the object in the chosen direction at the set speed
+            thisTransform.position += moveDirections[currentMoveDirection] * Time.deltaTime * moveSpeed;
+            thisTransform.position = new Vector3(thisTransform.position.x, thisTransform.position.y, thisTransform.position.y);
+    
+            if (decisionTimeCount > 0) decisionTimeCount -= Time.deltaTime;
+            else
+            {
+                // Choose a random time delay for taking a decision ( changing direction, or standing in place for a while )
+                decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
+                // Choose a movement direction, or stay in place
+                ChooseMoveDirection();
+            }
+            anim.SetBool("Right", right);
         }
-        anim.SetBool("Right", right);
         
+        // Change the radius
         Transform range = this.transform.GetChild(0);
         range.localScale = new Vector2(radius, radius / 4);
     }
@@ -78,5 +90,15 @@ public class KarenWander : MonoBehaviour
     {
         // Choose whether to move sideways or up/down
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
+    }
+
+    void turnDirection() {
+        if (transform.position.x < target.position.x) {
+            right = true;
+        }
+        else {
+            right = false;
+        }
+        anim.SetBool("Right", right);
     }
 }
