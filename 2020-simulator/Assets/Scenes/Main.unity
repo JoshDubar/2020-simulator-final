@@ -619,4 +619,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   karen: {fileID: 4839997766954531606, guid: d43f9d407686d4877b0cfa13bbabcbbc, type: 3}
   spawnWait: 5
-  startWait: 1000
+  startWait: 5
