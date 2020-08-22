@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1178559687}
   - component: {fileID: 6679353149259084166}
   - component: {fileID: -1015506501844557797}
-  - component: {fileID: -3532841853183025204}
+  - component: {fileID: 1293989610335011877}
   m_Layer: 0
   m_Name: Rando
   m_TagString: Rando
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
   offset: 3
---- !u!114 &-3532841853183025204
+--- !u!114 &1293989610335011877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

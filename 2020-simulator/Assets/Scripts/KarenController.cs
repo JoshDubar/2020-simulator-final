@@ -29,12 +29,12 @@ public class KarenController : Character
             moveSpeed = 5.0f;
             thisTransform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
             turnDirection();
-            this.transform.GetComponent<Walking>().enabled = false;
+            this.transform.GetComponent<Wander>().enabled = false;
             
         }
         else {
-            this.transform.GetComponent<Walking>();
-            right = this.transform.GetComponent<Walking>().right;
+            this.transform.GetComponent<Wander>();
+            right = this.transform.GetComponent<Wander>().right;
         }
         base.radiusChange();
     }

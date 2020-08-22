@@ -6,7 +6,7 @@ using UnityEngine;
 /// This makes an object move randomly in a set of directions, with some random time delay in between each decision
 /// </summary>
 
-public class Walking : MonoBehaviour
+public class Wander : MonoBehaviour
 {
     internal Transform thisTransform;
 

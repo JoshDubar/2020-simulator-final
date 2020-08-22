@@ -35,7 +35,7 @@ public class RandoController : Character {
         if (friendRatio >= 100) {
             friend = true;
         }
-        right = this.transform.GetComponent<Walking>().right;
+        right = this.transform.GetComponent<Wander>().right;
         base.radiusChange();
     }
 }
