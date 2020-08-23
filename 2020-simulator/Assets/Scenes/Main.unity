@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: socialSkills
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 190388583, guid: ea258d4e11e80490bb32bca0d2569c95, type: 3}
+      propertyPath: maskDurability
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 730033755977624088, guid: ea258d4e11e80490bb32bca0d2569c95,
         type: 3}
       propertyPath: m_LocalPosition.x
