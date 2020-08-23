@@ -60,12 +60,12 @@ public class PlayerController : Character
         else {
             moving = false;
         }
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            moveSpeed = DEFAULT_SPEED * 2.5f;
-        } 
-        else {
-            moveSpeed = DEFAULT_SPEED;
-        }       
+        //if (Input.GetKey(KeyCode.LeftShift)) {
+        //    moveSpeed = DEFAULT_SPEED * 2.5f;
+        //} 
+        //else {
+        //    moveSpeed = DEFAULT_SPEED;
+        //}       
         transform.position = new Vector3(pos.x, pos.y, pos.y);
         mask = (maskDurability > 0);
         anim.SetBool("Right", right);
@@ -79,8 +79,12 @@ public class PlayerController : Character
     // Update is called once per frame
     void setStats()
     {
-        playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
-        playerUI.radius.text = (radius*0.15).ToString() + "m";
+        if (maskDurability>=0) {
+            playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
+        } else {
+            playerUI.maskHealth.text = "0%";
+        }
+        playerUI.radius.text = (((int)radius)*0.15).ToString() + "m";
         playerUI.numFriends.text = friends.ToString();
     }
 
@@ -88,7 +92,7 @@ public class PlayerController : Character
         // Change radius for the inner circle of the player
         foreach (Transform child in transform) {
             if (child.CompareTag("InnerRadius")) {
-                child.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+                child.localScale = new Vector2(innerRadius / 9, innerRadius / 36);
             }
         }
     }

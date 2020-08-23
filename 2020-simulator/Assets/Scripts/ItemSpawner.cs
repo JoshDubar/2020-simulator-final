@@ -36,7 +36,7 @@ public class ItemSpawner : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (true)
         {
-            randItem = Random.Range(0, 5);
+            randItem = Random.Range(0,10);
             Vector3 spawnPosition = new Vector3(Random.Range(minSpawnValues.x, maxSpawnValues.x), Random.Range(minSpawnValues.y, maxSpawnValues.y), 1);
             Instantiate(items[randItem], spawnPosition + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
             yield return new WaitForSeconds(spawnWait);

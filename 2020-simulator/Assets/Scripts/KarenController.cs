@@ -26,7 +26,7 @@ public class KarenController : Character
     void Update() {
         // Following the player
         if (following) {
-            moveSpeed = 8.0f;
+            moveSpeed = 10.0f;
             thisTransform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
             turnDirection();
             this.transform.GetComponent<Wander>().enabled = false;
@@ -55,7 +55,7 @@ public class KarenController : Character
     void createLargerRadius() {
         foreach (Transform child in transform) {
             if (child.CompareTag("Radius")) {
-                child.transform.GetChild(0).localScale = new Vector2(1.5f, 1.5f);
+                child.transform.GetChild(0).localScale = new Vector2(2f, 2f);
                 child.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             }
         }
