@@ -9,6 +9,7 @@ TagManager:
   - Item
   - InnerRadius
   - Radius
+  - Canvas
   layers:
   - Default
   - TransparentFX

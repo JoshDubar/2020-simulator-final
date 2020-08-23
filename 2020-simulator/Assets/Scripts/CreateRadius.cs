@@ -14,7 +14,7 @@ public class CreateRadius : MonoBehaviour
         range.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - offset);
         
         if (this.transform.tag == "Rando") {
-            //range.AddComponent<DrawCircle>();
+            range.AddComponent<DrawCircle>();
         } 
         // Green
         // Red range.GetComponent<SpriteRenderer>().colour = new Color(195, 83, 85, 50);
