@@ -60,7 +60,7 @@ public class PlayerController : Character
         transform.position = new Vector3(pos.x, pos.y, pos.y);
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
-        // setStats();
+        //setStats();
         base.radiusChange();
     }
 
