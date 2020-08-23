@@ -9,7 +9,7 @@ public class InnerRadiusInteractions : MonoBehaviour
             if (collider.transform.parent.parent.tag == "Karen") {
                 Debug.Log("Karen is now going to chase you");
                 collider.transform.GetComponentInParent<KarenController>().following = true;
-                collider.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                collider.transform.parent.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
             }
         }
     }
