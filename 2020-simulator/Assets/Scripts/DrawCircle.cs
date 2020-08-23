@@ -14,7 +14,7 @@ public class DrawCircle : MonoBehaviour
     public float xradius = 0.5f;
     [Range(0, 50)]
     public float yradius = 0.1f;
-    LineRenderer line;
+    LineRenderer line = new LineRenderer();
 
     private Color lineColor = new Color(0, 225, 33, 225);
 
@@ -32,10 +32,9 @@ public class DrawCircle : MonoBehaviour
     {
         rate = 0.0f;
         index = 0;
-        activate = false;
+        activate = true;
         line = gameObject.GetComponent<LineRenderer>();
-        line.SetWidth(lineThickness, lineThickness);
-        line.startColor = Color.green;
+        line.startWidth = lineThickness;
         line.positionCount = (segments + 1);
         line.useWorldSpace = false;
         line.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 3);
@@ -43,14 +42,12 @@ public class DrawCircle : MonoBehaviour
         yradius = 0.5f;
     }
 
-    private void Update() {
-
-        if (activate) {
-            rate += Time.deltaTime;
-        }
-        if (rate > increment  && index < (segments + 1)) {
-            rate = 0;
+    private void Update()
+    {
+        if (activate && rate > 1.0f && index < (segments + 1)) {
             CreatePoints();
+            Debug.Log(index);
+            rate = 0;
         }
     }
 
@@ -60,10 +57,14 @@ public class DrawCircle : MonoBehaviour
 
         float change = 2 * (float)Math.PI / segments;
         float angle = change;
-        x = Mathf.Sin(angle) * xradius;
-        y = Mathf.Cos(angle) * yradius;
-        line.SetPosition(index, new Vector3(x, y, 0));
-        index += 1;
-        angle += change;
+
+        index += (int)Math.Floor(rate);
+        for (int i = 0; i < index; i ++)
+        {
+            x = Mathf.Sin(angle) * xradius;
+            y = Mathf.Cos(angle) * yradius;
+            line.SetPosition(index, new Vector3(x, y, 0));
+            angle += change;
+        }
     }
 }

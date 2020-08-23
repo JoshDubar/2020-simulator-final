@@ -14,13 +14,15 @@ public class PlayerController : Character
     public int friends;
     public bool mask = true;
     private float innerRadius;
+    public bool alive;
     Animator anim;
     PlayerUI playerUI;
 
     void Start() {
+        alive = true;
         innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
-        socialSkills = 0;
+        socialSkills = 10;
         maskDurability = 100;
         radius = 10;
         friends = 0;
@@ -65,7 +67,7 @@ public class PlayerController : Character
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
         anim.SetBool("Mask",mask);
-        setStats();
+        //setStats();
 
     }
 

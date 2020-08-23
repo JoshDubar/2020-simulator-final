@@ -18,7 +18,10 @@ public class InnerRadiusInteractions : MonoBehaviour
         Transform NPC = collider.transform;
         if (NPC.parent != null) {
             if (NPC.parent.childCount > 1) {
-                this.transform.GetComponentInParent<PlayerController>().maskDurability -= (5 * Time.deltaTime);
+                this.transform.GetComponentInParent<PlayerController>().maskDurability -= (15 * Time.deltaTime);
+            }
+            else {
+                this.transform.GetComponentInParent<PlayerController>().maskDurability -= 5*Time.deltaTime;
             }
         }
     }

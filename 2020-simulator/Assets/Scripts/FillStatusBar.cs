@@ -17,14 +17,7 @@ public class FillStatusBar : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (slider.value <= slider.minValue) {
-            fillImage.enabled = false;
-        }
-        if (slider.value > slider.minValue && !(fillImage)) {
-            fillImage.enabled = true;
-        }
-        float fillValue = rando.friendRatio / 100;
-        Debug.Log(fillValue);
+        float fillValue = rando.friendRatio / 100.0f;
         slider.value = fillValue;
     }
 }

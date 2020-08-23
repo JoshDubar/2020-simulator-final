@@ -12,7 +12,6 @@ public class CreateInnerRadius : MonoBehaviour
         GameObject range = Instantiate(circle) as GameObject;
         range.transform.parent = this.transform;
         range.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - offset);
-        range.transform.SetSiblingIndex(1);
     }
 
 }
