@@ -20,7 +20,7 @@ public class PlayerController : Character
     void Start() {
         innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
-        socialSkills = 0;
+        socialSkills = 1;
         maskDurability = 100;
         radius = 10;
         friends = 0;
@@ -30,6 +30,9 @@ public class PlayerController : Character
     }
 
     void Update() {
+        innerRadiusChange();
+        base.radiusChange();
+        
         conditions();
         base.radiusChange();
         innerRadiusChange();
@@ -65,6 +68,7 @@ public class PlayerController : Character
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
         anim.SetBool("Mask",mask);
+        Debug.Log(mask);
         setStats();
 
     }
@@ -72,7 +76,7 @@ public class PlayerController : Character
     // Update is called once per frame
     void setStats()
     {
-        playerUI.maskHealth.text = maskDurability.ToString() + "%";
+        playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
         playerUI.radius.text = (radius*0.15).ToString() + "m";
         playerUI.numFriends.text = friends.ToString();
     }
