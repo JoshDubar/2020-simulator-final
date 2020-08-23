@@ -92,7 +92,7 @@ public class PlayerController : Character
 
     void conditions() {
         if (maskDurability > 100) {
-            maskDurability = 10;
+            maskDurability = 100;
         }
         if (socialSkills < 0) {
             socialSkills = 0;
