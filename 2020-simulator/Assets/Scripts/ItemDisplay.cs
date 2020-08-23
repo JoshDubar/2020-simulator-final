@@ -32,21 +32,26 @@ public class ItemDisplay : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider) {
         PlayerController player = collider.GetComponent<PlayerController>();
         if (player != null) {
+            
             switch (name) {
                 case "Pancake":
                     player.energy += amount;
+                    SoundManager.PlaySound("item");
                     break;
                 case "MaskBox":
                     player.maskDurability += amount;
+                    SoundManager.PlaySound("item");
                     break;
                 case "KarenDestroyer":
                     DestroyKarens();
                     break;
                 case "Teddy":
                     player.socialSkills += amount;
+                    SoundManager.PlaySound("item");
                     break;
                 case "ToiletPaper":
                     player.radius += amount;
+                    SoundManager.PlaySound("item");
                     break;
 
             }
@@ -72,6 +77,7 @@ public class ItemDisplay : MonoBehaviour
         float camHeight = 2.0f * camHalfHeight;
         float camHalfWidth = screenAspect * camHalfHeight;
         float camWidth = 2.0f * camHalfWidth;
+        SoundManager.PlaySound("karen");
         for (int i = karens.Count - 1; i >= 0; i--)
         {
             GameObject karen = karens[i];

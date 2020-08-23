@@ -21,6 +21,7 @@ public class Interactions : MonoBehaviour
             }
             if (collider.transform.parent.tag == "Rando" && !collider.transform.GetComponentInParent<RandoController>().friend) {
                 if (collider.transform.GetComponentInParent<RandoController>().friendRatio >= 100) {
+                    SoundManager.PlaySound("friend");
                     collider.transform.GetComponentInParent<RandoController>().friend = true;
                     this.transform.GetComponentInParent<PlayerController>().friends += 1;
                     collider.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.green);
