@@ -33,6 +33,7 @@ public class PlayerController : Character
 
     void Update() {
         if (!alive) {
+            HighScore.UpdateHighScore(friends);
             SceneManager.LoadScene("GameOver");
         }
 
@@ -70,7 +71,12 @@ public class PlayerController : Character
             moveSpeed = DEFAULT_SPEED;
         }       
         transform.position = new Vector3(pos.x, pos.y, pos.y);
+        bool isMask = mask;
         mask = (maskDurability > 0);
+        if (!mask && isMask)
+        {
+            SoundManager.PlaySound("mask");
+        }
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
         anim.SetBool("Mask",mask);
