@@ -85,7 +85,7 @@ public class PlayerController : Character
         // Change radius for the inner circle of the player
         foreach (Transform child in transform) {
             if (child.CompareTag("InnerRadius")) {
-                child.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+                child.localScale = new Vector2(innerRadius / 9, innerRadius / 36);
             }
         }
     }
