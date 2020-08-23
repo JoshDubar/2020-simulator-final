@@ -13,7 +13,7 @@ public class PlayButton : MonoBehaviour
     }
 
     public void PlayTutorial() {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("TutorialPage_1");
     }
 
     public void QuitGame()

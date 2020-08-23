@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : Character
 {
@@ -14,10 +14,12 @@ public class PlayerController : Character
     public int friends;
     public bool mask = true;
     private float innerRadius;
+    public bool alive;
     Animator anim;
     PlayerUI playerUI;
 
     void Start() {
+        alive = true;
         innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
         socialSkills = 1;
@@ -30,6 +32,10 @@ public class PlayerController : Character
     }
 
     void Update() {
+        if (!alive) {
+            SceneManager.LoadScene("GameOver");
+        }
+
         innerRadiusChange();
         base.radiusChange();
         
@@ -68,8 +74,8 @@ public class PlayerController : Character
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
         anim.SetBool("Mask",mask);
-        Debug.Log(mask);
         setStats();
+
 
     }
 
@@ -92,7 +98,7 @@ public class PlayerController : Character
 
     void conditions() {
         if (maskDurability > 100) {
-            maskDurability = 10;
+            maskDurability = 100;
         }
         if (socialSkills < 0) {
             socialSkills = 0;
