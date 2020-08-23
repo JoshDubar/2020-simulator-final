@@ -35,13 +35,10 @@ public class PlayerController : Character
         if (!alive) {
             SceneManager.LoadScene("GameOver");
         }
-
-        innerRadiusChange();
-        base.radiusChange();
-        
         conditions();
         base.radiusChange();
         innerRadiusChange();
+        innerRadiusColor();
         Vector3 pos = transform.position;
         bool moving = true;
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) {
@@ -92,6 +89,19 @@ public class PlayerController : Character
         foreach (Transform child in transform) {
             if (child.CompareTag("InnerRadius")) {
                 child.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+            }
+        }
+    }
+
+    void innerRadiusColor() {
+        foreach (Transform child in transform) {
+            if (child.CompareTag("InnerRadius")) {
+                if (this.mask) {
+                    child.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.blue);
+                }
+                else {
+                    child.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                }
             }
         }
     }

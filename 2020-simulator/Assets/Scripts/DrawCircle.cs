@@ -49,7 +49,6 @@ public class DrawCircle : MonoBehaviour
     {
         if (activate && rate > 1.0f && index < (segments + 1)) {
             CreatePoints();
-            Debug.Log(index);
             rate = 0;
         }
     }
@@ -62,7 +61,7 @@ public class DrawCircle : MonoBehaviour
         float angle = change;
 
         index += (int)Math.Floor(rate);
-        for (int i = 0; i < index; i ++)
+        for (int i = 0; i < index && index < (segments + 1); i ++)
         {
             x = Mathf.Sin(angle) * xradius;
             y = Mathf.Cos(angle) * yradius;
