@@ -7,8 +7,6 @@ public class GameItem : ScriptableObject
 {
     public new string name;
     public Sprite image;
-    public int amount;
-
-    
+    public int amount;  
 
 }

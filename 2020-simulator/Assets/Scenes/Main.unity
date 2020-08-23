@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 4537682492185308483, guid: 432dc2239731a479da1dc2930fea0942, type: 3}
-  spawnWait: 2
-  startWait: 2
+  spawnWait: 5
+  startWait: 0
 --- !u!4 &474168548
 Transform:
   m_ObjectHideFlags: 0
@@ -619,4 +619,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   karen: {fileID: 4839997766954531606, guid: d43f9d407686d4877b0cfa13bbabcbbc, type: 3}
   spawnWait: 5
-  startWait: 1000
+  startWait: 0

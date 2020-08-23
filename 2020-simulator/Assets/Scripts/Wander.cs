@@ -69,7 +69,6 @@ public class Wander : MonoBehaviour
             ChooseMoveDirection();
         }
         anim.SetBool("Right", right);
-        Debug.Log(right);
     }
  
     void ChooseMoveDirection()
