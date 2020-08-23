@@ -7,6 +7,7 @@ public class FillStatusBar : MonoBehaviour {
 
     public Image fillImage;
     private Slider slider;
+    public RandoController rando;
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,7 +23,7 @@ public class FillStatusBar : MonoBehaviour {
         if (slider.value > slider.minValue && !(fillImage)) {
             fillImage.enabled = true;
         }
-        float fillValue = 0;
+        float fillValue = rando.friendRatio / 100;
         Debug.Log(fillValue);
         slider.value = fillValue;
     }
