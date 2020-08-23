@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2499699639234812011}
   - component: {fileID: 3871005275434858051}
   - component: {fileID: 5363266050820997674}
-  - component: {fileID: 5960597734498103985}
+  - component: {fileID: 9125524151714600018}
   m_Layer: 0
   m_Name: PlayerCircle
   m_TagString: Radius
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5960597734498103985
+--- !u!114 &9125524151714600018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6709542483749682294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a33a4f5ba45964eb0f725756aef9b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3161d8baf254cfe9c9b1ca694dc8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
