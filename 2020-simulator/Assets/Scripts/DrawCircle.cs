@@ -38,6 +38,9 @@ public class DrawCircle : MonoBehaviour
         line.positionCount = (segments + 1);
         line.useWorldSpace = false;
         line.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 3);
+        Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
+        line.material = whiteDiffuseMat;
+        line.SetColors(lineColor, lineColor);
         xradius = 0.5f;
         yradius = 0.5f;
     }
