@@ -9,6 +9,7 @@ public class PlayButton : MonoBehaviour
     public void PlayGame()
 
     {
+        Debug.Log("play");
         SceneManager.LoadScene("Main");
     }
 

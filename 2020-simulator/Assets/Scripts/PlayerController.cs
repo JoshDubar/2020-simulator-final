@@ -60,14 +60,14 @@ public class PlayerController : Character
         transform.position = new Vector3(pos.x, pos.y, pos.y);
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
-        // setStats();
+        setStats();
         base.radiusChange();
     }
 
     // Update is called once per frame
     void setStats()
     {
-        playerUI.maskHealth.text = maskDurability.ToString() + "%";
+        playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
         playerUI.radius.text = (radius*0.15).ToString() + "m";
         playerUI.numFriends.text = friends.ToString();
     }
