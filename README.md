@@ -1,4 +1,11 @@
 # Unijam-2020
+
+## TO OPEN IN UNITY
+- this is IF you for some reason are unable to download the game from https://2020-simulator.itch.io/2020-simulator
+- clone the master branch
+- add the 2020-simulator folder to unity hub and open (v2019.4.3f1)
+- navigate to StartMenu scene (assets->scenes->StartMenu) and press play
+
 ## Notes
 - teddy bear
 - masks
