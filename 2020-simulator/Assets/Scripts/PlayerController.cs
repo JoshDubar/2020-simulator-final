@@ -9,17 +9,17 @@ public class PlayerController : Character
     private const float DEFAULT_SPEED = 10.0f;
     private const bool DEFAULT_DIRECTION = true;
     public bool right = DEFAULT_DIRECTION;
-    public int energy;
     public int socialSkills;
     public float maskDurability;
     public int friends;
     public bool mask = true;
+    private float innerRadius;
     Animator anim;
     PlayerUI playerUI;
 
     void Start() {
+        innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
-        energy = 0;
         socialSkills = 0;
         maskDurability = 100;
         radius = 10;
@@ -30,6 +30,7 @@ public class PlayerController : Character
     }
 
     void Update() {
+        conditions();
         Vector3 pos = transform.position;
         bool moving = true;
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) {
@@ -58,10 +59,14 @@ public class PlayerController : Character
             moveSpeed = DEFAULT_SPEED;
         }       
         transform.position = new Vector3(pos.x, pos.y, pos.y);
+        mask = (maskDurability > 0);
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
+        anim.SetBool("Mask",mask);
         setStats();
         base.radiusChange();
+        innerRadiusChange();
+
     }
 
     // Update is called once per frame
@@ -70,5 +75,23 @@ public class PlayerController : Character
         playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
         playerUI.radius.text = (radius*0.15).ToString() + "m";
         playerUI.numFriends.text = friends.ToString();
+    }
+
+    void innerRadiusChange() {
+        // Change radius
+        Transform range = this.transform.GetChild(1);
+        range.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+    }
+
+    void conditions() {
+        if (maskDurability > 100) {
+            maskDurability = 10;
+        }
+        if (socialSkills < 0) {
+            socialSkills = 0;
+        }
+        if (radius < 2.5f) {
+            radius = 2.5f;
+        }
     }
 }

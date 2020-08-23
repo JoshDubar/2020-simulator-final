@@ -35,8 +35,8 @@ public class ItemDisplay : MonoBehaviour
             
             switch (name) {
                 case "Pancake":
-                    player.energy += amount;
                     SoundManager.PlaySound("item");
+                    player.moveSpeed += amount;
                     break;
                 case "MaskBox":
                     player.maskDurability += amount;
@@ -44,6 +44,7 @@ public class ItemDisplay : MonoBehaviour
                     break;
                 case "KarenDestroyer":
                     DestroyKarens();
+                    player.moveSpeed += amount;
                     break;
                 case "Teddy":
                     player.socialSkills += amount;
