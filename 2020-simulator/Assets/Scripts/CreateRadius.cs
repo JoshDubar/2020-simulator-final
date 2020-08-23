@@ -16,8 +16,11 @@ public class CreateRadius : MonoBehaviour
         if (this.transform.tag == "Rando") {
             range.AddComponent<DrawCircle>();
         } 
-        // Green
-        // Red range.GetComponent<SpriteRenderer>().colour = new Color(195, 83, 85, 50);
+        if (this.transform.tag == "Karen") {
+            GameObject karenRange = Instantiate(circle) as GameObject;
+            karenRange.transform.parent = range.transform;
+            karenRange.transform.position = range.transform.position;
+        }
     }
 
 }
