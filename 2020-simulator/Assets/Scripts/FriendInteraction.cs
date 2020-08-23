@@ -5,7 +5,6 @@ using UnityEngine;
 public class FriendInteraction : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collider) {
-        Debug.Log("WTF");
         Transform NPC = collider.transform;
         if (NPC.parent != null) {
             if (NPC.parent.tag == "Rando" && !NPC.GetComponentInParent<RandoController>().friend) {
@@ -21,7 +20,6 @@ public class FriendInteraction : MonoBehaviour {
                     NPC.GetComponent<DrawCircle>().activate = true;
                     NPC.GetComponent<DrawCircle>().rate += (this.transform.GetComponentInParent<PlayerController>().socialSkills * Time.deltaTime);
                     NPC.GetComponentInParent<RandoController>().friendRatio = NPC.GetComponent<DrawCircle>().index;
-                    Debug.Log(NPC.GetComponent<DrawCircle>().rate);
                 }
             }
         }

@@ -36,8 +36,9 @@ public class KarenController : Character
         else {
             this.transform.GetComponent<Wander>();
             right = this.transform.GetComponent<Wander>().right;
-        }
+        };
         base.radiusChange();
+        createLargerRadius();
     }
  
     void turnDirection() {
@@ -49,5 +50,14 @@ public class KarenController : Character
             right = false;
         }
         anim.SetBool("Right", right);
+    }
+
+    void createLargerRadius() {
+        foreach (Transform child in transform) {
+            if (child.CompareTag("Radius")) {
+                child.transform.GetChild(0).localScale = new Vector2(1.5f, 1.5f);
+                child.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
     }
 }
