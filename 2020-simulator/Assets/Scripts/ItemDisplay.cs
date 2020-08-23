@@ -53,7 +53,6 @@ public class ItemDisplay : MonoBehaviour
                     break;
 
             }
-            Debug.Log("name: " + player.name + ", energy:" + player.energy + ", socialSkills" + player.socialSkills + ", maskDurability" + player.maskDurability + ", radius:" + player.radius);
             Destroy(gameObject);
         }
     }
