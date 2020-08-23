@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : Character
 {
@@ -32,6 +32,10 @@ public class PlayerController : Character
     }
 
     void Update() {
+        if (!alive) {
+            SceneManager.LoadScene("GameOver");
+        }
+
         innerRadiusChange();
         base.radiusChange();
         
