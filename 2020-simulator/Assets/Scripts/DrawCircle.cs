@@ -38,6 +38,9 @@ public class DrawCircle : MonoBehaviour
         line.positionCount = (segments + 1);
         line.useWorldSpace = false;
         line.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 3);
+        Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
+        line.material = whiteDiffuseMat;
+        line.SetColors(lineColor, lineColor);
         xradius = 0.5f;
         yradius = 0.5f;
     }
@@ -46,7 +49,6 @@ public class DrawCircle : MonoBehaviour
     {
         if (activate && rate > 1.0f && index < (segments + 1)) {
             CreatePoints();
-            Debug.Log(index);
             rate = 0;
         }
     }
@@ -59,7 +61,7 @@ public class DrawCircle : MonoBehaviour
         float angle = change;
 
         index += (int)Math.Floor(rate);
-        for (int i = 0; i < index; i ++)
+        for (int i = 0; i < index && index < (segments + 1); i ++)
         {
             x = Mathf.Sin(angle) * xradius;
             y = Mathf.Cos(angle) * yradius;

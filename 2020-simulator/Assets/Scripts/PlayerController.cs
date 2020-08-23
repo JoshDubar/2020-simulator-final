@@ -22,7 +22,7 @@ public class PlayerController : Character
         alive = true;
         innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
-        socialSkills = 1;
+        socialSkills = 10;
         maskDurability = 100;
         radius = 10;
         friends = 0;
@@ -36,13 +36,10 @@ public class PlayerController : Character
             HighScore.UpdateHighScore(friends);
             SceneManager.LoadScene("GameOver");
         }
-
-        innerRadiusChange();
-        base.radiusChange();
-        
         conditions();
         base.radiusChange();
         innerRadiusChange();
+        innerRadiusColor();
         Vector3 pos = transform.position;
         bool moving = true;
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) {
@@ -64,12 +61,12 @@ public class PlayerController : Character
         else {
             moving = false;
         }
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            moveSpeed = DEFAULT_SPEED * 2.5f;
-        } 
-        else {
-            moveSpeed = DEFAULT_SPEED;
-        }       
+        //if (Input.GetKey(KeyCode.LeftShift)) {
+        //    moveSpeed = DEFAULT_SPEED * 2.5f;
+        //} 
+        //else {
+        //    moveSpeed = DEFAULT_SPEED;
+        //}       
         transform.position = new Vector3(pos.x, pos.y, pos.y);
         bool isMask = mask;
         mask = (maskDurability > 0);
@@ -88,8 +85,12 @@ public class PlayerController : Character
     // Update is called once per frame
     void setStats()
     {
-        playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
-        playerUI.radius.text = (radius*0.15).ToString() + "m";
+        if (maskDurability>=0) {
+            playerUI.maskHealth.text = ((int)maskDurability).ToString() + "%";
+        } else {
+            playerUI.maskHealth.text = "0%";
+        }
+        playerUI.radius.text = (((int)radius)*0.15).ToString() + "m";
         playerUI.numFriends.text = friends.ToString();
     }
 
@@ -97,7 +98,20 @@ public class PlayerController : Character
         // Change radius for the inner circle of the player
         foreach (Transform child in transform) {
             if (child.CompareTag("InnerRadius")) {
-                child.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+                child.localScale = new Vector2(innerRadius / 9, innerRadius / 36);
+            }
+        }
+    }
+
+    void innerRadiusColor() {
+        foreach (Transform child in transform) {
+            if (child.CompareTag("InnerRadius")) {
+                if (this.mask) {
+                    child.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.blue);
+                }
+                else {
+                    child.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                }
             }
         }
     }
