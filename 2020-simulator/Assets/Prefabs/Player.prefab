@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 129774819}
   - component: {fileID: 129774818}
   - component: {fileID: -1472090100049295844}
+  - component: {fileID: -537355621085477955}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -143,7 +144,6 @@ MonoBehaviour:
   maskDurability: 0
   friends: 0
   mask: 1
-  numFriends: 0
 --- !u!50 &129774819
 Rigidbody2D:
   serializedVersion: 4
@@ -204,4 +204,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 6709542483749682294, guid: ab7fd98910ab7a44bb34d407a87d97bd, type: 3}
+  offset: 4
+--- !u!114 &-537355621085477955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751353005725838621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f78ecca8322c0f43b8029e20a33ff0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 2027496478964277655, guid: 740e3046f75998b4e8f2297825b9f8c4, type: 3}
   offset: 4
