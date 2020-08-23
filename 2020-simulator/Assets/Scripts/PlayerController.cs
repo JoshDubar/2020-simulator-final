@@ -34,6 +34,8 @@ public class PlayerController : Character
         base.radiusChange();
         
         conditions();
+        base.radiusChange();
+        innerRadiusChange();
         Vector3 pos = transform.position;
         bool moving = true;
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) {
@@ -80,9 +82,12 @@ public class PlayerController : Character
     }
 
     void innerRadiusChange() {
-        // Change radius
-        Transform range = this.transform.GetChild(1);
-        range.localScale = new Vector2(innerRadius / 9, innerRadius / 36);
+        // Change radius for the inner circle of the player
+        foreach (Transform child in transform) {
+            if (child.CompareTag("InnerRadius")) {
+                child.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+            }
+        }
     }
 
     void conditions() {
