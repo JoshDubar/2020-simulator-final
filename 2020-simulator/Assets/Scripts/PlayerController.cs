@@ -20,7 +20,7 @@ public class PlayerController : Character
     void Start() {
         innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
-        socialSkills = 0;
+        socialSkills = 1;
         maskDurability = 100;
         radius = 10;
         friends = 0;
@@ -30,7 +30,9 @@ public class PlayerController : Character
     }
 
     void Update() {
-
+        innerRadiusChange();
+        base.radiusChange();
+        
         conditions();
         base.radiusChange();
         innerRadiusChange();
@@ -66,8 +68,8 @@ public class PlayerController : Character
         anim.SetBool("Right", right);
         anim.SetBool("Moving",moving);
         anim.SetBool("Mask",mask);
+        Debug.Log(mask);
         setStats();
-        
 
     }
 
@@ -80,9 +82,12 @@ public class PlayerController : Character
     }
 
     void innerRadiusChange() {
-        // Change radius
-        Transform range = this.transform.GetChild(1);
-        range.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+        // Change radius for the inner circle of the player
+        foreach (Transform child in transform) {
+            if (child.CompareTag("InnerRadius")) {
+                child.localScale = new Vector2(innerRadius / 4, innerRadius / 16);
+            }
+        }
     }
 
     void conditions() {
