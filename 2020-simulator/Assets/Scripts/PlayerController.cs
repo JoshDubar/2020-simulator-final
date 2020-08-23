@@ -30,7 +30,10 @@ public class PlayerController : Character
     }
 
     void Update() {
+
         conditions();
+        base.radiusChange();
+        innerRadiusChange();
         Vector3 pos = transform.position;
         bool moving = true;
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)) {
@@ -64,8 +67,7 @@ public class PlayerController : Character
         anim.SetBool("Moving",moving);
         anim.SetBool("Mask",mask);
         setStats();
-        base.radiusChange();
-        innerRadiusChange();
+        
 
     }
 
@@ -85,7 +87,7 @@ public class PlayerController : Character
 
     void conditions() {
         if (maskDurability > 100) {
-            maskDurability = 10;
+            maskDurability = 100;
         }
         if (socialSkills < 0) {
             socialSkills = 0;

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayButton : MonoBehaviour
+public class GameOverButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void PlayGame()
+    public void Again()
 
     {
         SceneManager.LoadScene("Main");
     }
 
-    public void PlayTutorial() {
-        SceneManager.LoadScene("TutorialPage_1");
+    public void Menu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void QuitGame()

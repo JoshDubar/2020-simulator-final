@@ -17,17 +17,6 @@ public class ItemDisplay : MonoBehaviour
         this.name = item.name;
     }
 
-    void Update() {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        float screenAspect = (float)Screen.width/(float)Screen.height;
-        float camHalfHeight = Camera.main.orthographicSize;
-        float camHalfWidth = screenAspect * camHalfHeight;
-        float camWidth = 2.0f * camHalfWidth;
-        if (transform.position.x < (screenBounds.x - camWidth * 2) || transform.position.x > (screenBounds.x + camWidth) || transform.position.y > screenBounds.y + camHalfHeight) {
-            
-        }
-    }
-
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collider) {
         PlayerController player = collider.GetComponent<PlayerController>();
@@ -35,8 +24,8 @@ public class ItemDisplay : MonoBehaviour
             
             switch (name) {
                 case "Pancake":
-                    SoundManager.PlaySound("item");
                     player.moveSpeed += amount;
+                    SoundManager.PlaySound("item");
                     break;
                 case "MaskBox":
                     player.maskDurability += amount;
@@ -44,7 +33,6 @@ public class ItemDisplay : MonoBehaviour
                     break;
                 case "KarenDestroyer":
                     DestroyKarens();
-                    player.moveSpeed += amount;
                     break;
                 case "Teddy":
                     player.socialSkills += amount;
