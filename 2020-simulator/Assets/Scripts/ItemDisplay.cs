@@ -11,13 +11,10 @@ public class ItemDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = item.image;
         this.amount = item.amount;
         this.name = item.name;
-        
-        
     }
 
     void Update() {
@@ -43,7 +40,7 @@ public class ItemDisplay : MonoBehaviour
                     player.maskDurability += amount;
                     break;
                 case "KarenDestroyer":
-                    player.energy += amount;
+                    DestroyKarens();
                     break;
                 case "Teddy":
                     player.socialSkills += amount;
@@ -54,6 +51,36 @@ public class ItemDisplay : MonoBehaviour
 
             }
             Destroy(gameObject);
+        }
+    }
+
+    private void DestroyKarens()
+    {
+        object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
+        List<GameObject> karens = new List<GameObject>();
+        foreach (object o in obj)
+        {
+            GameObject g = (GameObject)o;
+            if (g.name == "Karen(Clone)")
+            {
+                karens.Add(g);
+            }
+        }
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        float screenAspect = (float)Screen.width / (float)Screen.height;
+        float camHalfHeight = Camera.main.orthographicSize;
+        float camHeight = 2.0f * camHalfHeight;
+        float camHalfWidth = screenAspect * camHalfHeight;
+        float camWidth = 2.0f * camHalfWidth;
+        for (int i = karens.Count - 1; i >= 0; i--)
+        {
+            GameObject karen = karens[i];
+            float x = karen.transform.position.x;
+            float y = karen.transform.position.y;
+            if (screenBounds.x - camWidth < x && x < screenBounds.x && screenBounds.y - camHeight < y  && y < screenBounds.y)
+            {
+                Destroy(karen);
+            }
         }
     }
 }
