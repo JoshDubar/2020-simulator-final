@@ -24,22 +24,22 @@ public class ItemDisplay : MonoBehaviour
             
             switch (name) {
                 case "Pancake":
-                    player.moveSpeed += amount;
+                    player.moveSpeed += 2;
                     SoundManager.PlaySound("item");
                     break;
                 case "MaskBox":
-                    player.maskDurability += amount;
+                    player.maskDurability += 30f;
                     SoundManager.PlaySound("item");
                     break;
                 case "KarenDestroyer":
                     DestroyKarens();
                     break;
                 case "Teddy":
-                    player.socialSkills += amount;
+                    player.socialSkills += 5;
                     SoundManager.PlaySound("item");
                     break;
                 case "ToiletPaper":
-                    player.radius += amount;
+                    player.radius += 0.2f;
                     SoundManager.PlaySound("item");
                     break;
 
