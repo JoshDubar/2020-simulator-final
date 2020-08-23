@@ -1,27 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
-    [SerializeField] protected float moveSpeed;
-    [SerializeField] protected bool alive;
-    [SerializeField] protected float radius;
-    private bool overlap;
-    protected SpriteRenderer sprite;
+public class Character : MonoBehaviour
+{
+    public float radius;
+    public float moveSpeed;
 
-    // Start is called before the first frame update
-    protected virtual void Start() {
-        sprite = GetComponent<SpriteRenderer>();
+    protected void radiusChange() {
+        // Change radius
+        Transform range = this.transform.GetChild(0);
+        range.localScale = new Vector2(radius, radius / 4);
     }
-
-    // Update is called once per frame
-    protected virtual void Update() {
-        move();
-    }
-
-    protected virtual void move() {
-        ;
-    }
-
-
 }

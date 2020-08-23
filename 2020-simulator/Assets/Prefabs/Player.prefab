@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1472090100049295844}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,13 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288549eacd9ee01429d36d469c81869b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  radius: 10
+  moveSpeed: 0
   right: 1
   energy: 0
   socialSkills: 0
   maskDurability: 0
-  radius: 10
+  friends: 0
   mask: 1
+  numFriends: 0
 --- !u!50 &129774819
 Rigidbody2D:
   serializedVersion: 4
@@ -201,5 +203,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da72beaeadeab21489213291e0d9dd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
-  offset: 3
+  circle: {fileID: 6709542483749682294, guid: ab7fd98910ab7a44bb34d407a87d97bd, type: 3}
+  offset: 4

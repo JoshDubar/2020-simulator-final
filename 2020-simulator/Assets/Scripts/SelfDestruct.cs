@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
+    // Lifetime of the item
     private float lifeTime = 1.0f;
 
-    // Update is called once per frame
     void Update()
     {
         if (lifeTime > 0)

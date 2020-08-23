@@ -5,18 +5,15 @@ using UnityEngine;
 public class CreateRadius : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject radius;
+    public GameObject circle;
     public int offset;
     void Start()
     {
-        GameObject range = Instantiate(radius) as GameObject;
+        GameObject range = Instantiate(circle) as GameObject;
         range.transform.parent = this.transform;
         range.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - offset);
+        // Green
+        // Red range.GetComponent<SpriteRenderer>().colour = new Color(195, 83, 85, 50);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
