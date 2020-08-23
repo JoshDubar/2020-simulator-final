@@ -22,7 +22,7 @@ public class PlayerController : Character
         alive = true;
         innerRadius = radius;
         moveSpeed = DEFAULT_SPEED;
-        socialSkills = 1;
+        socialSkills = 10;
         maskDurability = 100;
         radius = 10;
         friends = 0;
