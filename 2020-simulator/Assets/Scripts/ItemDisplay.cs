@@ -37,13 +37,13 @@ public class ItemDisplay : MonoBehaviour
         if (player != null) {
             switch (name) {
                 case "Pancake":
-                    player.energy += amount;
+                    player.moveSpeed += amount;
                     break;
                 case "MaskBox":
                     player.maskDurability += amount;
                     break;
                 case "KarenDestroyer":
-                    player.energy += amount;
+                    player.moveSpeed += amount;
                     break;
                 case "Teddy":
                     player.socialSkills += amount;

@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 5595783664141902406, guid: 9c99f4e7c476a7143ba4e658c5314975, type: 3}
-  offset: 3
+  offset: 0
 --- !u!114 &1293989610335011877
 MonoBehaviour:
   m_ObjectHideFlags: 0
